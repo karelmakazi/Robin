@@ -1,0 +1,41 @@
+body {
+  background-color: #BF533B;
+}
+
+.mainContainer {
+  height: 1000px;
+  width: 900px;
+  background-color: cornflowerblue;
+}
+
+.mainImage {
+  height: 60%;
+  border: crimson;
+}
+
+.mainImageTop {
+  height: 33%;
+  background-color: #401713;
+}
+
+.mainImageMid {
+  height: 33%;
+  background-color: #BF533B;
+}
+
+.mainImageBottom {
+  height: 33%;
+  background-color: #F27B50;
+  font-family: 'Hind', sans-serif; 
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: -1px ;
+}
+
+.introBox {
+  background-color: crimson;
+}
+
+
+/* font-family: 'Raleway', sans-serif;
+font-family: 'Hind', sans-serif; */
