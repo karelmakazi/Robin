@@ -8,7 +8,7 @@ import Focus from './Focus'
 
 const App = () => {
   return (
-    <div className='mainContainer'>
+    <div>
       <Route exact path='/' component={Start} />
       <Route exact path='/Focus' component={Focus} />
     </div>
