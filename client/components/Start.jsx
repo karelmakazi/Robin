@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 //DATA: Database - Check active Focus - stand-in variable
-const activeFocus = true
+const activeFocus = false
 
 //VARIABLE DIRECTION
 let buttonDirection = (activeFocus) ? "START SESSION" : "SET FOCUS"

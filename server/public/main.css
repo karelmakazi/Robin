@@ -1,4 +1,5 @@
 body {
+  background-color: bisque;
 }
 
 .mainContainer {
@@ -13,7 +14,6 @@ body {
   height:700px;
   font-family: 'Hind', sans-serif; 
   font-weight: 700;
-  color: #403C29;
 }
 
 .mainImage {
@@ -23,12 +23,12 @@ body {
 .mainImageTop {
   height: 33.3%;
   border-radius: 20px 20px 0px 0px;
-  background-color: #403C29;
+  background-color: #01261C;
 }
 
 .mainImageMid {
   height: 33.3%;
-  background-color: #807952;
+  background-color:#36593E;
 }
 
 .mainImageBottom {
@@ -36,10 +36,10 @@ body {
   padding-top: 45px;
   padding-left: 40px;
   vertical-align: bottom;
-  background-color: #BFB57B;
   font-size: 5rem;
   letter-spacing: -2px;
-  text-shadow: 0px 1px 1px #E6DA94;
+  text-shadow: 0px 1px 1px rgb(175, 193, 139);
+  background-color: #4D7343;
 }
 
 .mainContentBox {
@@ -47,7 +47,7 @@ body {
   padding-top: 10px;
   padding-left: 20px;
   height: 35%;
-  background-color: #E6DA94;
+  background-color:#78A658;
   text-align: center;
 }
 
@@ -57,23 +57,24 @@ body {
   font-size: 1.9rem;
   line-height: 100%;
   letter-spacing: -0.5px;
-  color: #807952
+  color: #44593E
   }
 
 .buttonContainer {
-  padding-left: 480px;
+  padding-left: 530px;
   padding-right: 0;
 }
 
 .startButton {
-  width: 300px;
+  width: 250px;
   height:40px;
-  padding-top:5px;
-  background-color: #403C29 ;
+  border-radius: 20px 0px 0px 20px;
+  padding-top:4px;
+  background-color: #44593E ;
   font-family: 'Hind', sans-serif; 
   font-weight: 600;
-  font-size: 18px;
-  color: #E6DA94;
+  font-size: 22px;
+  color: #7B8C56;
 }
 
 /* font-family: 'Raleway', sans-serif;
