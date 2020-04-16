@@ -38,6 +38,7 @@ body {
   vertical-align: bottom;
   font-size: 5rem;
   letter-spacing: -2px;
+  color: #01261C;
   text-shadow: 0px 1px 1px rgb(175, 193, 139);
   background-color: #4D7343;
 }
@@ -57,7 +58,7 @@ body {
   font-size: 1.9rem;
   line-height: 100%;
   letter-spacing: -0.5px;
-  color: #44593E
+  color: #01261C;
   }
 
 .buttonContainer {

@@ -44,7 +44,7 @@ class Focus extends React.Component {
             <input type='text' id='duration' name='duration' maxLength="2"></input>
           </div>
           <div className='buttonDiv'>
-            <Link to=''>
+            <Link to='/Session'>
             <button className='proceedButton'>Proceed</button>
             </Link>
           </div>  
