@@ -11,7 +11,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 800px;
-  height:700px;
+  height:800px;
   font-family: 'Hind', sans-serif; 
   font-weight: 700;
 }
@@ -71,11 +71,12 @@ body {
   height:40px;
   border-radius: 20px 0px 0px 20px;
   padding-top:4px;
-  background-color: #44593E ;
+  background-color: #661D4A;
   font-family: 'Hind', sans-serif; 
   font-weight: 600;
   font-size: 22px;
-  color: #7B8C56;
+  color:#44002C;
+  text-shadow: 0px 1px 1px rgb(136, 55, 105);
 }
 
 /* font-family: 'Raleway', sans-serif;

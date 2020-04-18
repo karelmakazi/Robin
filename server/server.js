@@ -7,6 +7,6 @@ const start = require('./routes/active')
 server.use(express.json())
 server.use(express.static(path.join(__dirname, './public')))
 
-server.use('/active', start)
+server.use('/api/v1', start)
 
 module.exports = server

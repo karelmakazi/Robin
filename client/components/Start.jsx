@@ -24,10 +24,10 @@ class Start extends React.Component {
   }
 
   componentDidMount(){
-    request.get('/active')
+    request.get('/api/v1/active')
       .then(res => {
         this.setState({
-          activeCount: 1
+          activeCount: res.body
         })
       })
   }
@@ -51,6 +51,9 @@ class Start extends React.Component {
           <div className='buttonContainer'>
             <Link to={routeComponent}>
               <button className='startButton'>{buttonDirection}</button>
+            </Link>
+            <Link to='/Session'>
+              <button className='startButton'>REPORTING</button>
             </Link>
           </div>
          </div> 

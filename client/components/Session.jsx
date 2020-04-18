@@ -9,6 +9,9 @@ class Session extends React.Component {
     focusArea: 'Draw',
     focusDuration: 10,
     focusProgress: 4,
+    location:'properName',
+    distance:'properName',
+    quiver:'properName'
   }
 
   // componentDidMount(){
