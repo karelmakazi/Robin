@@ -5,12 +5,20 @@ import Copy from './Copy'
 class Focus extends React.Component {
   constructor(props){
     super(props)
-    this.state = {focus: 8}
+    this.state = {
+      f_timestamp: + new Date(),
+      f_area: 8,
+      f_detail:'',
+      f_duration:'',
+      }
+
     this.handleChange = this.handleChange.bind(this)
   }
   
   handleChange(event){
-   this.setState({focus: event.target.value})
+   this.setState({
+     [event.target.name]: event.target.value
+    })
   }
 
   render(){
@@ -27,7 +35,7 @@ class Focus extends React.Component {
             <h3>Create a new Focus for your Archery Practice</h3>
             <div className='focusSelect'>
               <label htmlFor='focus'>Select a Focus: </label>
-              <select id='focus' name='focus' onChange={this.handleChange}>
+              <select id='focus' name='f_area' onChange={this.handleChange}>
                 <option value='8'>Select a Focus</option>
                 <option value='1'>Stance</option>
                 <option value='2'>Bow Grip</option>
@@ -40,17 +48,17 @@ class Focus extends React.Component {
             </div>
             <div className='extraDescText'>
               <label htmlFor='extraDesc'>Extra Detail: </label>
-              <textarea id='extraDesc' name='extraDesc' rows='5' cols='40'>
+              <textarea id='extraDesc' name='f_detail' rows='5' cols='35'>
               </textarea>
             </div>
             <div className='durationText'>
               <label htmlFor='duration'>Focus Duration: </label>
-              <input type='text' id='duration' name='duration' maxLength="2"></input>
+              <input type='number' id='duration' name='f_duration' maxLength="2"></input>
             </div>
           </form>
         </div>
         <div className='copyContainer'>
-          <Copy descId={this.state.focus} />
+          <Copy descId={this.state.f_area} />
         </div>
       </div>
         <div className=''>
