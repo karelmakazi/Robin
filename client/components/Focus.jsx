@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Copy from './Copy'
+import {addFocus} from '../api'
 
 class Focus extends React.Component {
   constructor(props){
@@ -13,12 +14,20 @@ class Focus extends React.Component {
       }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
   
   handleChange(event){
    this.setState({
      [event.target.name]: event.target.value
     })
+  }
+
+  handleSubmit(event){
+    event.preventDefault()
+    console.log(this.state);
+    
+    // addFocus(this.state)
   }
 
   render(){
@@ -31,7 +40,7 @@ class Focus extends React.Component {
       </div>
       <div className='mainContentBox'>
         <div className='formContainer'>
-          <form>
+          <form className='focusForm' onSubmit={this.handleSubmit}>
             <h3>Create a new Focus for your Archery Practice</h3>
             <div className='focusSelect'>
               <label htmlFor='focus'>Select a Focus: </label>
@@ -48,24 +57,30 @@ class Focus extends React.Component {
             </div>
             <div className='extraDescText'>
               <label htmlFor='extraDesc'>Extra Detail: </label>
-              <textarea id='extraDesc' name='f_detail' rows='5' cols='35'>
+              <textarea id='extraDesc' name='f_detail' rows='5' cols='35' 
+                onChange={this.handleChange}>
               </textarea>
             </div>
             <div className='durationText'>
               <label htmlFor='duration'>Focus Duration: </label>
-              <input type='number' id='duration' name='f_duration' maxLength="2"></input>
+              <input type='number' id='duration' name='f_duration' maxLength="2"
+                onChange={this.handleChange}>
+              </input>
             </div>
+
+        <div className=''>
+          {/* <Link to='/Session'> */}
+          <button className='mainButton' type='submit'>Proceed</button>
+          {/* </Link> */}
+        </div>  
+
+
           </form>
         </div>
         <div className='copyContainer'>
           <Copy descId={this.state.f_area} />
         </div>
       </div>
-        <div className=''>
-          <Link to='/Session'>
-          <button className='mainButton'>Proceed</button>
-          </Link>
-        </div>  
     </div>
     )
 }}

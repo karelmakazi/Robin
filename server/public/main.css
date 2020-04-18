@@ -1,5 +1,5 @@
 body {
-  background-color: bisque;
+  background-color: rgb(109, 91, 66);
 }
 
 .mainContainer {
@@ -24,23 +24,30 @@ body {
   height: 33.3%;
   border-radius: 20px 20px 0px 0px;
   background-color: #01261C;
+  border-top: 8px solid #78A658;
+  border-left: 8px solid #78A658;
+  border-right: 8px solid #78A658;
 }
 
 .mainImageMid {
   height: 33.3%;
   background-color:#36593E;
+  border-left: 8px solid #78A658;
+  border-right: 8px solid #78A658;
 }
 
 .mainImageBottom {
   height: 33.3%;
-  padding-top: 45px;
-  padding-left: 40px;
+  padding-top: 8%;
+  padding-left: 10px;
   vertical-align: bottom;
+  background-color: #4D7343;
+  border-left: 8px solid #78A658;
+  border-right: 8px solid #78A658;
   font-size: 5rem;
   letter-spacing: -2px;
   color: #01261C;
   text-shadow: 0px 1px 1px rgb(175, 193, 139);
-  background-color: #4D7343;
 }
 
 .mainContentBox {
