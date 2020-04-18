@@ -13,8 +13,10 @@ const Copy = props => {
  
   return(
     <>
-      <h3>{focusName}</h3>
-      <p className='copyText'> {focusDescription} </p>
+      <p className='copyText'> 
+        <span className='descHeading'>{focusName}</span>
+        <p>{focusDescription}</p>
+      </p>
     </>
   )}
 

@@ -53,10 +53,10 @@ class Start extends React.Component {
           </div>
           <div className='buttonContainer'>
             <Link to={routeComponent}>
-              <button className='startButton'>{buttonDirection}</button>
+              <button className='mainButton'>{buttonDirection}</button>
             </Link>
             <Link to='/Session'>
-              <button className='startButton'>REPORTING</button>
+              <button className='mainButton'>REPORTING</button>
             </Link>
           </div>
          </div> 
