@@ -16,3 +16,26 @@ router.get('/active', (req, res) => {
     })
 })
 
+//GET Focus Details for /Session
+router.get('/session', (req, res) => {
+  db.getSession()
+    .then(result => {
+      res.json(result)
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})
+
+
+//POST /v1/focus
+router.post('/', (req, res) => {
+  console.log('active.js')
+  db.addFocus(req.body)
+  .then(() => {
+    res.status(201).send()
+    })
+  .catch(err => {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
+})

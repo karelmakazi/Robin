@@ -22,9 +22,6 @@ class Start extends React.Component {
   
   render(){
     
-    //DATA: Database - Check active Focus - stand-in variable
-    // const activeFocus = false
-    
     //VARIABLE DIRECTION
     let buttonDirection = (this.state.activeCount) ? "NEW SESSION" : "SET FOCUS"
     let routeComponent = (this.state.activeCount) ? "/Session" : "/Focus"
@@ -39,10 +36,13 @@ class Start extends React.Component {
     return(
       <div className='appContainer'>
         <div className='mainImage'>
+          <div className='arrowContainer'>
+            <img className='arrows' src='/images/arrows.png'/>
+          </div>
           <div className='mainImageTop'></div>
           <div className='mainImageMid'></div>
           <div className='mainImageBottom'>
-            ROBIN
+            <div className='titleContainer'>ROBIN</div>
           </div>
         </div>
         <div className="mainContentBox">

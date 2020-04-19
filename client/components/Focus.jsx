@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Copy from './Copy'
 import {addFocus} from '../api'
 
+
 class Focus extends React.Component {
   constructor(props){
     super(props)
@@ -25,18 +26,21 @@ class Focus extends React.Component {
 
   handleSubmit(event){
     event.preventDefault()
-    console.log(this.state);
-    
-    // addFocus(this.state)
+    addFocus(this.state)
   }
 
   render(){
     return(
     <div className='appContainer'>
       <div className='mainImage'>
+        <div className='arrowContainer'>
+          <img className='arrows' src='/images/arrows.png'/>
+        </div>
         <div className='mainImageTop'></div>
         <div className='mainImageMid'></div>
-        <div className='mainImageBottom'> ROBIN </div>
+        <div className='mainImageBottom'>
+          <div className='titleContainer'>ROBIN</div>
+        </div>
       </div>
       <div className='mainContentBox'>
         <div className='formContainer'>
@@ -67,18 +71,15 @@ class Focus extends React.Component {
                 onChange={this.handleChange}>
               </input>
             </div>
-
-        <div className=''>
-          {/* <Link to='/Session'> */}
-          <button className='mainButton' type='submit'>Proceed</button>
-          {/* </Link> */}
-        </div>  
-
-
           </form>
-        </div>
+        </div>  
         <div className='copyContainer'>
           <Copy descId={this.state.f_area} />
+          <div className=''>
+            <Link to='/Session' onClick={this.handleSubmit}>
+            <button className='mainButton' >Proceed</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

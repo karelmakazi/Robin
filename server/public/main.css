@@ -38,16 +38,15 @@ body {
 
 .mainImageBottom {
   height: 33.3%;
-  padding-top: 8%;
-  padding-left: 10px;
   vertical-align: bottom;
   background-color: #4D7343;
   border-left: 8px solid #78A658;
   border-right: 8px solid #78A658;
-  font-size: 5rem;
+  font-size: 6rem;
   letter-spacing: -2px;
   color: #01261C;
   text-shadow: 0px 1px 1px rgb(175, 193, 139);
+  display: flex;
 }
 
 .mainContentBox {
@@ -61,8 +60,8 @@ body {
 
 .formContainer{
   width: 50%;
-  padding-left: 5%;
   padding-right: 2.5%;
+  display: flex;
   align-content: flex-start;
 }
 
@@ -74,9 +73,24 @@ body {
   }
 
 .buttonContainer {
-  padding-left: 530px;
-  padding-right: 0;
+ 
 }
+
+.titleContainer {
+  width: 50%;
+  height: 100%;
+  padding-top: 6.5%;
+  padding-left: 10px;
+}
+
+.arrowContainer {
+  display: flex;
+  justify-content: right;
+  z-index: 0;
+  position: absolute;
+  margin-top: 71px;
+  margin-left: 450px;
+}  
 
 .introBox {
   height: 60%;
@@ -114,6 +128,10 @@ body {
   font-size: .7rem;
   text-align: left;
   color: #01261C;
+}
+
+.arrows {
+  height: 450px;
 }
 
 /* font-family: 'Raleway', sans-serif;
