@@ -29,7 +29,7 @@ router.get('/session', (req, res) => {
 
 
 //POST /v1/focus
-router.post('/', (req, res) => {
+router.post('/focus', (req, res) => {
   console.log('active.js')
   db.addFocus(req.body)
   .then(() => {

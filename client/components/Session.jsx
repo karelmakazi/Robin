@@ -3,15 +3,19 @@ import {Link} from 'react-router-dom'
 import request from 'superagent'
 
 class Session extends React.Component {
-
-  state = {
-    focusID: '',
-    focusArea: '',
-    focusDuration: '',
-    focusProgress: 0,
-    location:'',
-    distance:'',
-    quiver:'',
+  constructor(props){
+    super(props)
+    this.state = {
+      focusID: '',
+      focusArea: '',
+      focusDuration: '',
+      focusProgress: 0,
+      location:'',
+      distance:'',
+      quiver:'',
+    }
+    this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount(){
@@ -30,6 +34,11 @@ class Session extends React.Component {
       [event.target.name]: event.target.value
      })
    }
+
+  handleSubmit(event){
+    event.preventDefault()
+    addSession(this.state)
+  }
 
   render(){
     return(
@@ -54,7 +63,7 @@ class Session extends React.Component {
           </div>
           <div>
             <label htmlFor='location'>Location: </label>
-            <select id='location' name='location'>
+            <select id='location' name='location' onChange={this.handleChange}>
               <option value='8'>Select a Location</option>
               <option value='1'>Auckland Archery Club</option>
               <option value='2'>Mountain Green Club (outdoor)</option>
@@ -67,15 +76,15 @@ class Session extends React.Component {
            </div>
            <div>
              <label htmlFor='distance'>Distance: </label>
-             <input type='text' id='distance' name='distance' maxLength="3"></input>
+             <input type='text' id='distance' name='distance' maxLength="3" onChange={this.handleChange}></input>
            </div>
            <div>
              <label htmlFor='quiverSize'>Quiver: </label>
-             <input type='text' id='quiver' name='quiver' maxLength="2"></input>
+             <input type='text' id='quiver' name='quiver' maxLength="2" onChange={this.handleChange}></input>
            </div>
           <div className='buttonContainer'>
             <Link to=''>
-              <button className='startButton'>START SESSION</button>
+              <button className='mainButton'>START SESSION</button>
             </Link>
           </div>
         </div>

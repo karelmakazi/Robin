@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(109, 91, 66);
+  background-color: rgb(60, 48, 58);
 }
 
 .mainContainer {
@@ -91,6 +91,25 @@ body {
   margin-top: 71px;
   margin-left: 450px;
 }  
+
+.targetContainer{
+  height: 600px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring{
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: tomato;
+  border: 1.5px solid black ;
+}
 
 .introBox {
   height: 60%;

@@ -10,8 +10,8 @@ class Focus extends React.Component {
     this.state = {
       f_timestamp: + new Date(),
       f_area: 8,
-      f_detail:'',
-      f_duration:'',
+      f_detail: '',
+      f_duration: '',
       }
 
     this.handleChange = this.handleChange.bind(this)
