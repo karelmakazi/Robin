@@ -38,7 +38,8 @@ function getSession(db = database){
   return db('focus')
   .select('focus_id as id',
     'f_area as area',
-    'f_duration as duration')
+    'f_duration as duration',
+    'f_detail as detail')
   .where({f_status: 'active'})
   .then(results => {
     return(results);

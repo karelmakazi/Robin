@@ -13,19 +13,20 @@ class Practice extends React.Component {
   
   render(){
     return(
-      <div className='mainContainer'>
-        <div className='appContainer'>
-          <div className='targetContainer'>
-            <div className='ring'> 
+      <div className='appContainer'>
+        <div className='mainImagePractice'>
+          <div className='frodo'>
+            <div className='ring'>
               <div className='ring'>
-                <div className='ring'>
-                  <div className='ring'>
-                    <div className='ring'>
-                      <div className='ring'>
-                        <div className='ring'>
-                          <div className='ring'>
-                            <div className='ring'>
-                              <div className='ring'>
+                <div className='ring3'>
+                  <div className='ring4'>
+                    <div className='ring5'>
+                      <div className='ring6'>
+                        <div className='ring7'>
+                          <div className='ring8'>
+                            <div className='ring9'>
+                              <div className='ring10'>
+                                
                               </div>
                             </div>
                           </div>
@@ -38,9 +39,16 @@ class Practice extends React.Component {
             </div>
           </div>
         </div>
+        <div className='mainContentPractice'>
+          
+        </div>
       </div>
+   
     )
   }
 }
 
 export default Practice
+
+
+

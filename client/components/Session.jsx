@@ -15,7 +15,6 @@ class Session extends React.Component {
       quiver:'',
     }
     this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount(){
@@ -25,6 +24,7 @@ class Session extends React.Component {
       focusID:res.body[0].id,
       focusArea: res.body[0].area,
       focusDuration: res.body[0].duration,
+      focusDetail: res.body[0].detail
       })
     })
   }
@@ -41,6 +41,12 @@ class Session extends React.Component {
   }
 
   render(){
+
+    const sessionHeading = 'Session Details'
+    const scoringNoteHeading = 'Scoring Notes'
+    const scoringNotes = 'Accurate scorekeeping has a direct impact on the effectiveness of reporting. Try to add each arrow after firing.'
+    const details = 'Testing instinctive aiming with a recurve bow.'
+
     return(
     <div className='appContainer'>
       <div className='mainImage'>
@@ -53,15 +59,13 @@ class Session extends React.Component {
           <div className='titleContainer'>ROBIN</div>
         </div>
       </div>
-      <div className="mainContentBox">
-        <div className='introBox'>
-          <div>
-            Current focus: {this.state.focusArea} 
-          </div>
-          <div>
-            Session {this.state.focusProgress} of {this.state.focusDuration}
-          </div>
-          <div>
+      <div className='mainContentBox'>
+      <div className='leftContentBox'>
+        <div className='lcHeading'>
+          {sessionHeading}
+        </div>
+        <div className='lcContent'>
+          <div className='selectLocation'>
             <label htmlFor='location'>Location: </label>
             <select id='location' name='location' onChange={this.handleChange}>
               <option value='8'>Select a Location</option>
@@ -73,21 +77,42 @@ class Session extends React.Component {
               <option value='6'>Whitford Forrest Archers</option>
               <option value='7'>Private Range (no weather data)</option>
             </select>
-           </div>
-           <div>
-             <label htmlFor='distance'>Distance: </label>
-             <input type='text' id='distance' name='distance' maxLength="3" onChange={this.handleChange}></input>
-           </div>
-           <div>
-             <label htmlFor='quiverSize'>Quiver: </label>
-             <input type='text' id='quiver' name='quiver' maxLength="2" onChange={this.handleChange}></input>
-           </div>
-          <div className='buttonContainer'>
-            <Link to=''>
-              <button className='mainButton'>START SESSION</button>
-            </Link>
+          </div>
+          <div className='distanceTextBox'>
+            <label htmlFor='distance'>Distance: </label>
+            <input type='text' id='distance' name='distance' maxLength="3" onChange={this.handleChange}></input>
+          </div>
+          <div className='quiverTextBox'>
+            <label htmlFor='quiverSize'>Quiver: </label>
+            <input type='text' id='quiver' name='quiver' maxLength="2" onChange={this.handleChange}></input>
+          </div>
+          <div className='scoringNotes'>
+            <div className='scnHeading'>{scoringNoteHeading}</div>
+            <div className='scnBody'>{scoringNotes}</div>
           </div>
         </div>
+      </div>
+      <div className='rightContentBox'>
+        <div className='rcTextBox'>
+          <div>
+            Current focus: {this.state.focusArea} 
+          </div>
+          <div className='sessionText'>
+            Session: {this.state.focusProgress} of {this.state.focusDuration}
+          </div>
+          <div className='detailHeading'>
+            Details:
+          </div>
+          <div className='detailText'>
+            {details}
+          </div>
+        </div>
+        <div className='rcButtonBox'>
+          <Link to='/Practice'>
+            <button className='mainButton'>START SESSION</button>
+          </Link>
+        </div>
+      </div>
       </div>
       </div>
     
