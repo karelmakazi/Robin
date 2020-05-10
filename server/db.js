@@ -19,19 +19,6 @@ function checkActive(db = database){
     })
 }
 
-//POST NEW FOCUS TO DB
-function addFocus(newFocus, db = database){
-  postableFocus = {
-    f_timestamp: newFocus.f_timestamp,
-    f_area: newFocus.f_area,
-    f_detail: JSON.stringify(newFocus.f_detail),
-    f_duration: newFocus.f_duration,
-    f_status: 'active'
-    }
-    console.log(postableFocus)
-    
-  return db('focus').insert(postableFocus)
-  }
 
 //GET FOCUS DETAILS TO DISPLAY IN /Session  
 function getSession(db = database){
@@ -44,4 +31,8 @@ function getSession(db = database){
   .then(results => {
     return(results);
   })
+}
+
+function addFocus(db =database){
+  
 }
