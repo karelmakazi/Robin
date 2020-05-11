@@ -18,7 +18,7 @@ class Session extends React.Component {
   }
 
   componentDidMount(){
-    request.get('/api/v1/session')
+    // request.get('/api/v1/session')
   }
   
   handleChange(event){
