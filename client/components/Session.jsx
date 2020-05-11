@@ -2,6 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import request from 'superagent'
 
+const key = 'e194032630d94a94e625089b27af504b'
+const weatherApi = 'https://api.openweathermap.org/data/2.5/weather?q=Auckland&appid=' + key
+
 class Session extends React.Component {
   constructor(props){
     super(props)
@@ -13,12 +16,27 @@ class Session extends React.Component {
       location:'',
       distance:'',
       quiver:'',
+      windspeed:'',
+      windDirection:'',
+      humidity:'',
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount(){
-    // request.get('/api/v1/session')
+    request.get(weatherApi)
+      .then(res => {
+        console.log(res.body);
+        let wind = res.body.wind
+        let humidity = res.body.main
+      
+
+        this.setState({
+          windspeed: wind.speed,
+          windDirection: wind.deg,
+          humidity: humidity.humidity,
+        })
+      })
   }
   
   handleChange(event){
@@ -35,8 +53,15 @@ class Session extends React.Component {
   render(){
     
     const sessionHeading = 'Session Details'
-    const scoringNoteHeading = 'Scoring Notes'
-    const scoringNotes = 'Accurate scorekeeping has a direct impact on the effectiveness of reporting. Try to add each arrow after firing.'
+    const scoringNoteHeading = 'Weather Report'
+
+    const windSpeedText = 'WIND SPEED: ' + this.state.windspeed
+    const windDirectionText = 'WIND DIRECTION: ' + this.state.windDirection
+    const humidityText = 'HUMIDITY: ' + this.state.humidity
+
+
+
+
     const details = 'Testing instinctive aiming with a recurve bow.'
     
     return(
@@ -80,7 +105,11 @@ class Session extends React.Component {
           </div>
           <div className='scoringNotes'>
             <div className='scnHeading'>{scoringNoteHeading}</div>
-            <div className='scnBody'>{scoringNotes}</div>
+            <div className='scnBody'>
+              {windDirectionText}
+              {windSpeedText}
+              {humidityText}
+            </div>
           </div>
         </div>
       </div>
