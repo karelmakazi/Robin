@@ -21,6 +21,7 @@ class Session extends React.Component {
       humidity:'',
     }
     this.handleChange = this.handleChange.bind(this)
+    this.windDirection = this.windDirection.bind(this)
   }
 
   componentDidMount(){
@@ -49,15 +50,52 @@ class Session extends React.Component {
     event.preventDefault()
     addSession(this.state)
   }
+
+
+  windDirection(deg){
+      let cardinal =''
+      switch (true) {
+        case (deg >= 0 && deg <= 23):
+          cardinal = ' North ';
+          return cardinal
+        case (deg >= 337 && deg <= 360):
+          cardinal = ' North ';
+          return cardinal
+        case (deg >= 24 && deg <= 68):
+          cardinal = ' North East ';
+          return cardinal
+        case (deg >= 69 && deg <= 113):
+          cardinal = ' East ';
+          return cardinal
+        case (deg >= 114 && deg <= 158):
+          cardinal = ' South East ';
+          return cardinal
+        case (deg >= 159 && deg <= 203):
+          cardinal = ' South ';
+          return cardinal
+        case (deg >= 204 && deg <= 248):
+          cardinal = ' South West ';
+          return cardinal
+        case (deg >= 249 && deg <= 293):
+          cardinal = ' West ';
+          return cardinal
+        case (deg >= 294 && deg <= 336):
+          cardinal = ' North West ';
+          return cardinal
+      }
+    }
+  
   
   render(){
     
     const sessionHeading = 'Session Details'
     const scoringNoteHeading = 'Weather Report'
 
-    const windSpeedText = 'WIND SPEED: ' + this.state.windspeed
-    const windDirectionText = 'WIND DIRECTION: ' + this.state.windDirection
-    const humidityText = 'HUMIDITY: ' + this.state.humidity
+    let windKnots = Math.round((this.state.windspeed * 1.94384))
+
+    const windSpeedText = 'WIND SPEED: ' + windKnots + ' kn'
+    const windDirectionText = 'WIND DIRECTION: ' + this.windDirection(this.state.windDirection)
+    const humidityText = 'HUMIDITY: ' + this.state.humidity +'%'
 
 
 
@@ -106,9 +144,15 @@ class Session extends React.Component {
           <div className='scoringNotes'>
             <div className='scnHeading'>{scoringNoteHeading}</div>
             <div className='scnBody'>
-              {windDirectionText}
-              {windSpeedText}
-              {humidityText}
+              <div>
+                {windDirectionText}
+              </div>
+              <div>
+                {windSpeedText}
+              </div>
+              <div>
+                {humidityText}
+              </div>
             </div>
           </div>
         </div>
