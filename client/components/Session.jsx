@@ -19,36 +19,28 @@ class Session extends React.Component {
 
   componentDidMount(){
     request.get('/api/v1/session')
-    .then(res => {
-      this.setState({
-      focusID:res.body[0].id,
-      focusArea: res.body[0].area,
-      focusDuration: res.body[0].duration,
-      focusDetail: res.body[0].detail
-      })
-    })
   }
-
+  
   handleChange(event){
     this.setState({
       [event.target.name]: event.target.value
-     })
-   }
-
+    })
+  }
+  
   handleSubmit(event){
     event.preventDefault()
     addSession(this.state)
   }
-
+  
   render(){
-
+    
     const sessionHeading = 'Session Details'
     const scoringNoteHeading = 'Scoring Notes'
     const scoringNotes = 'Accurate scorekeeping has a direct impact on the effectiveness of reporting. Try to add each arrow after firing.'
     const details = 'Testing instinctive aiming with a recurve bow.'
-
+    
     return(
-    <div className='appContainer'>
+      <div className='appContainer'>
       <div className='mainImage'>
         <div className='arrowContainer'>
           <img className='arrows' src='/images/arrows.png'/>
@@ -121,3 +113,12 @@ class Session extends React.Component {
 }
 
 export default Session
+
+  // .then(res => {
+  //   // this.setState({
+  //   // focusID:res.body[0].id,
+  //   // focusArea: res.body[0].area,
+  //   // focusDuration: res.body[0].duration,
+  //   // focusDetail: res.body[0].detail
+  //   // })
+  // })

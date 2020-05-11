@@ -82,9 +82,8 @@ class Focus extends React.Component {
           <div className='rcTextBox'>
             <Copy descId={this.state.f_area} />
           </div>
-          <div className='rcButtonBox'>
-            <Link to='/Session' onClick={this.handleSubmit}>
-            {/* <Link to='/Session' > */}
+          <div className='rcButtonBox' onClick={this.handleSubmit}>
+            <Link to='/Session' >
               <button className='mainButton' >PROCEED</button>
             </Link>
           </div>

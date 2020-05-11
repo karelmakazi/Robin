@@ -33,6 +33,14 @@ function getSession(db = database){
   })
 }
 
-function addFocus(db =database){
-  
+//POST NEW FOCUS TO DB 
+function addFocus(newFocus, db = database){
+  return db('focus')
+  .insert({
+    f_timestamp: newFocus.f_timestamp,
+    f_area: newFocus.f_area,
+    f_detail: JSON.stringify(newFocus.f_detail),
+    f_duration: newFocus.f_duration,
+    f_status: 'completed'
+  })
 }
