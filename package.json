@@ -36,8 +36,10 @@
     "knex": "^0.20.14",
     "npm-run-all": "^4.1.5",
     "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5",
     "sqlite3": "^4.1.1",
-    "superagent": "^5.2.2"
+    "superagent": "^5.2.2",
+    "thunk": "0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

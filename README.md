@@ -1,28 +1,21 @@
-# A starter webpack project for React
+# ROBIN - archery practice tracking app
+Welcome to Robin. This app is intended to be used to track an archer's progress during a series of practices. The intention is to include a shot by shot recording feature as well as an in depth graphing component that will be used to track and improve performance.
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
 
-* Fork this repo
-* Rename your repo according to the app you're building
+# Getting started
+* Initial Setup: npm install & knex init
+* Database: You will need to run npx knex migrate:latest and npx knex seed:run to get started
+* To run: npm run dev
 
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && npm i
-```
 
-To start the development server with a watcher that rebuilds your code, run `npm run dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
+# Planned Features
+* Active shot logging and database storage
+* Graphing and shot mapping over time
+* Highlighting trends in performance
+* Expand range options and API to include ranges outside Auckland
+* Adapt API call to use coordinates
+* Add coordinate finder ability for private ranges
+* Increase quality of advice - possibly with the help of some local coaches
 
-Additional components should be placed in `client/components`.
-
-## Separate client/server
-
-The boilerplate is also set up to host the client using `webpack-dev-server` with hot module reloading etc. To use this method, in one terminal run:
-```sh
-npm run client
-```
-and in the other:
-```sh
-npm run server
-```
-The client will be available on http://localhost:8080 and the server on http://localhost:3000. Note that you will still need to manage CORS between the two, as they are on different ports.
-
+# Known Issues
+* Not responsive
